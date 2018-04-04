@@ -11,6 +11,6 @@ pipeline:
   slack:
     image: plugins/slack
     webhook:  ${slack_webhook}
-    channel: "lenapalmçacalme"
-    username: "Jean-Marie Lepen"
+    channel: lenapalmçacalme
+    username: Jean-Marie-Lepen
     image_url: https://files.newsnetz.ch/story/2/1/2/21249533/6/topelement.jpg
