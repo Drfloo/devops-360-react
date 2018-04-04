@@ -15,3 +15,9 @@ pipeline:
     username: Jean-Marie-Lepen
     icon_url: https://files.newsnetz.ch/story/2/1/2/21249533/6/topelement.jpg
     secrets: [ slack_webhook ]
+    template: >
+      {{#success build.status}}
+        build {{build.number}} succeeded. Bravo tu fais avancer la france nest ce pas !
+      {{else}}
+        build {{build.number}} failed. Tu me déçoit mon petit farfadet !
+      {{/success}}
