@@ -17,10 +17,9 @@ pipeline:
       event: tag
 
   release:
-    github_release:
-      image: plugins/github-release
-      api-key: <git_api>
-      files: build.tar.gz
+    image: plugins/github-release
+    api-key: <git_api>
+    files: build.tar.gz
     when:
       event: tag
     secrets: [ git_api ]
