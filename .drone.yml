@@ -18,11 +18,10 @@ pipeline:
 
   release:
     image: plugins/github-release
-    api-key: <git_api>
     files: build.tar.gz
     when:
       event: tag
-    secrets: [ git_api ]
+    secrets: [ github_token ]
   slack:
     image: plugins/slack
     webhook:  <slack_webhook>
