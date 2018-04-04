@@ -8,3 +8,9 @@ pipeline:
     image: node:alpine
     commands:
       - yarn test
+  slack:
+    image: plugins/slack
+    webhook:  https://hooks.slack.com/services/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
+    channel: "lenapalmçacalme"
+    username: "Jean-Marie Lepen"
+    image_url: https://files.newsnetz.ch/story/2/1/2/21249533/6/topelement.jpg
