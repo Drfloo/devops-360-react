@@ -33,5 +33,5 @@ pipeline:
       {{#success build.status}}
         build {{build.number}} Réussit ! Bravo tu fais avancer la france nest ce pas !
       {{else}}
-        build {{build.number}} Tu as échoué ! Tu me déçoit mon petit farfadet :D !
+        build {{build.number}} Tu as échoué :( ! Tu me déçoit mon petit farfadet :D !
       {{/success}}
