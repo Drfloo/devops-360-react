@@ -13,5 +13,5 @@ pipeline:
     webhook:  <slack_webhook>
     channel: lenapalmçacalme
     username: Jean-Marie-Lepen
-    image_url: https://files.newsnetz.ch/story/2/1/2/21249533/6/topelement.jpg
+    icon_url: https://files.newsnetz.ch/story/2/1/2/21249533/6/topelement.jpg
     secrets: [ slack_webhook ]
