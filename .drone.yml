@@ -8,6 +8,22 @@ pipeline:
     image: node:alpine
     commands:
       - yarn test
+  pre-release:
+    image: node:alpine
+    commands:
+      - yarn build
+      - tar -zcvf build.tar.gz -C build
+    when:
+      event: tag
+
+  release:
+    github_release:
+      image: plugins/github-release
+      api-key: <git_api>
+      files: build.tar.gz
+    when:
+      event: tag
+    secrets: [ git_api ]
   slack:
     image: plugins/slack
     webhook:  <slack_webhook>
@@ -17,7 +33,7 @@ pipeline:
     secrets: [ slack_webhook ]
     template: >
       {{#success build.status}}
-        build {{build.number}} succeeded. Bravo tu fais avancer la france nest ce pas !
+        build {{build.number}} Réussit ! Bravo tu fais avancer la france nest ce pas !
       {{else}}
-        build {{build.number}} failed. Tu me déçoit mon petit farfadet !
+        build {{build.number}} Tu as échoué ! Tu me déçoit mon petit farfadet !
       {{/success}}
